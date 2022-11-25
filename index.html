@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast</title>
+</head>
+<style>
+    body {
+        margin: 0 auto;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    h1 {
+        color: #1a64d6;
+        font-size: 34px;
+        
+    }
+    h2 {
+        font-size: 34px;
+        margin-top: -15px;
+        font-weight: 500;
+    }
+    h3 {
+        font-size: 1.5em
+    }
+
+    .capsule {      
+        text-align: center;
+
+    }
+
+   p {
+       color: rgb(136, 126, 126);
+       font-size: 1.10rem;
+       word-spacing: 0.5rem;
+       font-family: monospace;
+       margin-top: -10px;
+   }
+   
+   .degree {
+       color: rgb(85, 84, 84);
+       font-weight: 700;
+   }
+   .jule {
+    font-weight: 600;
+   }
+    ul {
+        display: block;
+        margin-left: -60px;
+    }
+
+    li {
+        list-style-type: none;
+        padding: 0.2em;
+        max-width: 350px;
+        margin: 0 auto;
+        transition: all 200ms ease-in-out;
+
+        
+    }
+
+    li:hover {
+        background-color: #fff7ec;
+        
+    }
+    button {
+        background-color: #1a64d6;
+        border: 1px solid #1a64d6;
+        padding: 16px 24px;
+        border-radius: 30px;
+        font-size: 15px;
+        margin: 0.5em 0 2em -1em;
+        color: white;
+        
+    }
+
+
+    button:hover {
+        background-color: white;
+        border: 1px solid #1a64d6;
+        color: #1a64d6;
+        cursor: pointer;
+        
+    }
+    
+</style>
+<body>
+    <div class="capsule">
+        
+        <h1>🌤
+            <br> 
+            Currently 21° in Tokyo
+        </h1> 
+        
+        <h2>13° /<span class="jule"> 23°</span></h2>
+
+        <ul>
+            <li>
+                <h3>🌧 Tomorrow</h3>
+                <p>10° / <span class="degree">22°</span></p>
+            </li>
+            
+
+            <li>
+                <h3>⛅ Saturday </h3>
+                <p>15° / <span class="degree"> 17°</span></p>
+            </li>
+            
+
+            <li>
+                <h3>☀️ Sunday</h3>
+                <p>25° / <span class="degree">28°</span></p>
+            </li>
+            
+        </ul>
+
+        <button>Change city</button>
+        <p>Coded by Blessing Agbali</p>
+    </div>
+
+    <script>
+
+        function updateHeading(newHeading){
+            let heading = document.querySelector("h1");
+            heading.innerHTML = newHeading;
+        }
+
+
+        function changeCity(){
+
+            let country = prompt("What city do you live in?");
+            let temp = prompt("What's the current temperature?");
+
+            if (country) {
+                    updateHeading("😄" + "<br>" + "Currently " + temp + "° in " + country);
+
+                } else {
+                     updateHeading("😄" + "<br>" + "Currently " + temp + "° in " + country);
+                }
+        }
+
+        let clickButton = document.querySelector("button");
+        clickButton.addEventListener("click", changeCity);
+
+    </script>
+   
+</body>
+
+</html>
